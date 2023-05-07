@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  codinghub-db:
+    image: mysql:latest
+    container_name: codinghub-db
+    restart: always
+    ports:
+      - '3306:3306'
+    env_file:
+      - ./.env
+    volumes:
+      - ./db/mysql/data:/var/lib/mysql
